@@ -1,0 +1,291 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNC71g0ki1m5dpQom8u0kyN",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Omdena-Bhutan/02-data-structures-assignment-team-10/blob/main/Week%206%20Assignment%20\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "5Fa-a7g_tmmS",
+        "outputId": "2ce4dcfe-9793-41c2-98a2-08c0017e8cab"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter your marks (0-100): 90\n",
+            "Your grade: A\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Define the function to calculate grade\n",
+        "def calculate_grade(marks):\n",
+        "    if marks >= 90 and marks <= 100:\n",
+        "        return \"A\"\n",
+        "    elif marks >= 80:\n",
+        "        return \"B\"\n",
+        "    elif marks >= 70:\n",
+        "        return \"C\"\n",
+        "    elif marks >= 60:\n",
+        "        return \"D\"\n",
+        "    elif marks >= 0:\n",
+        "        return \"Fail\"\n",
+        "    else:\n",
+        "        return \"Invalid marks\"\n",
+        "\n",
+        "# Ask the user for input\n",
+        "marks = int(input(\"Enter your marks (0-100): \"))\n",
+        "\n",
+        "# Call the function and print the result\n",
+        "grade = calculate_grade(marks)\n",
+        "print(\"Your grade:\", grade)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import datetime\n",
+        "\n",
+        "# Ask user for their age\n",
+        "age = int(input(\"Enter your age: \"))\n",
+        "\n",
+        "# Get current day of the week\n",
+        "today = datetime.datetime.today().strftime('%A')\n",
+        "\n",
+        "# Determine base ticket price\n",
+        "if age < 12:\n",
+        "    price = 300\n",
+        "elif age >= 13 and age <= 17:\n",
+        "    price = 500\n",
+        "elif age >= 18 and age <= 59:\n",
+        "    price = 800\n",
+        "else:\n",
+        "    price = 400\n",
+        "\n",
+        "# Apply Wednesday discount\n",
+        "if today == \"Wednesday\":\n",
+        "    print(\"Today is Wednesday! You get a 100 discount.\")\n",
+        "    price -= 100\n",
+        "\n",
+        "# Print the ticket price\n",
+        "print(\"Your ticket price is:\", price)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ZSRstYAQvpRv",
+        "outputId": "c4080a3c-d200-4938-a396-515e70c3e1a5"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter your age: 17\n",
+            "Today is Wednesday! You get a 100 discount.\n",
+            "Your ticket price is: 400\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Secret number\n",
+        "secret_number = 7\n",
+        "\n",
+        "# Ask user to guess\n",
+        "guess = int(input(\"Guess the secret number (between 1 and 10): \"))\n",
+        "\n",
+        "# Keep asking until correct\n",
+        "while guess != secret_number:\n",
+        "    print(\"Wrong guess, try again!\")\n",
+        "    guess = int(input(\"Guess again: \"))\n",
+        "\n",
+        "# When guessed correctly\n",
+        "print(\"🎉 Congratulations! You guessed it right.\")\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 228
+        },
+        "id": "KLtQJzln0gXQ",
+        "outputId": "c9a5b330-e687-45d1-98e2-54cc531c7f35"
+      },
+      "execution_count": 4,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "Guess the secret number (between 1 and 10): \n"
+          ]
+        },
+        {
+          "output_type": "error",
+          "ename": "ValueError",
+          "evalue": "invalid literal for int() with base 10: ''",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mValueError\u001b[0m                                Traceback (most recent call last)",
+            "\u001b[0;32m/tmp/ipython-input-3009705763.py\u001b[0m in \u001b[0;36m<cell line: 0>\u001b[0;34m()\u001b[0m\n\u001b[1;32m      3\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      4\u001b[0m \u001b[0;31m# Ask user to guess\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 5\u001b[0;31m \u001b[0mguess\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0minput\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"Guess the secret number (between 1 and 10): \"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      6\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      7\u001b[0m \u001b[0;31m# Keep asking until correct\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mValueError\u001b[0m: invalid literal for int() with base 10: ''"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def greet(name, age):\n",
+        "    print(f\"Hello {name}, you are {age} years old.\")\n",
+        "\n",
+        "# Using keyword arguments\n",
+        "greet(name=\"Ali\", age=25)\n",
+        "greet(age=30, name=\"Sara\")  # Order doesn't matter when using keywords\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "zh3UM_2BAzWQ",
+        "outputId": "6b62bf41-c7aa-46a2-f498-39a832997585"
+      },
+      "execution_count": 6,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Hello Ali, you are 25 years old.\n",
+            "Hello Sara, you are 30 years old.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def add_numbers(*args):\n",
+        "    total = 0\n",
+        "    for number in args:\n",
+        "        total += number\n",
+        "    print(\"Total:\", total)\n",
+        "\n",
+        "# Calling the function with multiple numbers\n",
+        "add_numbers(10, 20, 30)\n",
+        "add_numbers(5, 15)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "YH6maCYaBM3f",
+        "outputId": "4d0ee926-451d-4f65-f7b0-7793c5afb167"
+      },
+      "execution_count": 8,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Total: 60\n",
+            "Total: 20\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def print_info(**kwargs):\n",
+        "    for key, value in kwargs.items():\n",
+        "        print(f\"{key}: {value}\")\n",
+        "\n",
+        "# Call with keyword arguments\n",
+        "print_info(name=\"Ali\", age=25, city=\"Lahore\")\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "1xVvgoWzBRDo",
+        "outputId": "b1361b60-1242-448c-f4fe-2b223598ff04"
+      },
+      "execution_count": 10,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "name: Ali\n",
+            "age: 25\n",
+            "city: Lahore\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def demo_function(a, *args, **kwargs):\n",
+        "    print(\"a:\", a)\n",
+        "    print(\"args:\", args)\n",
+        "    print(\"kwargs:\", kwargs)\n",
+        "\n",
+        "demo_function(1, 2, 3, 4, name=\"Ali\", age=22)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "78dG-k0zBUi_",
+        "outputId": "d68fe9a1-9abc-4ee7-9704-6dfcd80038ff"
+      },
+      "execution_count": 11,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "a: 1\n",
+            "args: (2, 3, 4)\n",
+            "kwargs: {'name': 'Ali', 'age': 22}\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
